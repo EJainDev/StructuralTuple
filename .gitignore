@@ -1,0 +1,12 @@
+.*
+build/
+
+!.github
+
+!.gitignore
+!.gitattributes
+!.clang-format
+!.clang-tidy
+!.clangd
+
+CMakeUserPresets.json
