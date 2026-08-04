@@ -101,8 +101,8 @@ struct is_tuple : std::false_type {};
 template <typename... Ts>
 struct is_tuple<tuple<Ts...>> : std::true_type {};
 
-template <typename T>
-export concept tuple_t = is_tuple<std::remove_cvref_t<T>>::value;
+export template <typename T>
+concept tuple_t = is_tuple<std::remove_cvref_t<T>>::value;
 
 export template <std::size_t I, typename... Ts>
 constexpr decltype(auto) get(tuple<Ts...>& t) noexcept {
