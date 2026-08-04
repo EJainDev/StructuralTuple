@@ -153,9 +153,12 @@ consteval auto compute_prefix_sums(const std::array<std::size_t, N>& sizes) {
 }
 
 export template <tuple_t... Tuples>
-constexpr auto tuple_cat(Tuples&&... tuples) {
-  using Result =
-      typename[:std::meta::substitute(^^tuple, get_all_types<std::remove_cvref_t<Tuples>...>()):];
+using tuple_cat_t =
+    typename[:std::meta::substitute(^^tuple, get_all_types<std::remove_cvref_t<Tuples>...>()):];
+
+export template <tuple_t... Tuples>
+constexpr tuple_cat_t<Tuples...> tuple_cat(Tuples&&... tuples) {
+  using Result = tuple_cat_t<Tuples...>;
   Result result;
 
   constexpr auto pre_sizes =
