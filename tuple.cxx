@@ -100,7 +100,7 @@ struct tuple {
   consteval auto end() { return nsdms.end(); }
 };
 
-template <typename T>
+export template <typename T>
 concept tuple_t = is_instantiation_of<tuple, T>::value;
 
 export template <std::size_t I, typename... Ts>
