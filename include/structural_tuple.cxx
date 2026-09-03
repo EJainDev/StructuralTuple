@@ -93,6 +93,12 @@ struct tuple {
 
   consteval auto begin() const { return nsdms.begin(); }
   consteval auto end() const { return nsdms.end(); }
+
+  constexpr const auto& front() const { return s.[:nsdms.front():]; }
+  constexpr auto& front() { return s.[:nsdms.front():]; }
+
+  constexpr const auto& back() const { return s.[:nsdms.back():]; }
+  constexpr auto& back() { return s.[:nsdms.back():]; }
 };
 
 template <typename T>
