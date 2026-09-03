@@ -91,8 +91,8 @@ struct tuple {
     return s.[:member:];
   }
 
-  consteval auto begin() { return nsdms.begin(); }
-  consteval auto end() { return nsdms.end(); }
+  consteval auto begin() const { return nsdms.begin(); }
+  consteval auto end() const { return nsdms.end(); }
 };
 
 template <typename T>
