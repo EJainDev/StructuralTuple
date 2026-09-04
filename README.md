@@ -58,7 +58,7 @@ Example:
 include(FetchContent)
 
 FetchContent_Declare(
-    structural_tuple
+    StructuralTuple
     GIT_REPOSITORY https://github.com/EJainDev/StructuralTuple.git
     GIT_TAG main
 )

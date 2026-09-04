@@ -2,6 +2,6 @@
 
 include("${CMAKE_CURRENT_LIST_DIR}/structural_tuple_targets.cmake")
 
-if(NOT TARGET structural_tuple)
-  add_library(structural_tuple ALIAS structural_tuple::structural_tuple)
+if(NOT TARGET structural_tuple::structural_tuple)
+  add_library(structural_tuple::structural_tuple ALIAS structural_tuple)
 endif()
